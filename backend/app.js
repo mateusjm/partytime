@@ -6,6 +6,8 @@ app.use(cors())
 
 app.use(express.json())
 
+const port = process.env.PORT || 3001
+
 // db connection
 const conn = require('./db/conn')
 
@@ -16,6 +18,6 @@ const routes = require('./routes/router')
 
 app.use('/api', routes)
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log('Servidor on-line!')
 })
